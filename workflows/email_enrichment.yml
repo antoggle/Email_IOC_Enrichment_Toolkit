@@ -1,0 +1,38 @@
+name: Run Email IOC Enrichment
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'email_header_enricher.py'
+      - 'email_header.txt'
+      - '.github/workflows/email_enrich.yml'
+
+jobs:
+  run-enrichment:
+    runs-on: ubuntu-latest
+    env:
+      VT_API_KEY: ${{ secrets.VT_API_KEY }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests python-dotenv
+
+      - name: Run Email Header Enricher
+        run: python email_header_enricher.py
+
+      - name: Upload Enrichment Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: email-header-enrichment
+          path: email_header_enrichment_results.json
