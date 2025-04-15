@@ -58,3 +58,9 @@ Use `triage_report.md` to document your findings, IOC verdicts, and recommendati
 - Work with APIs and JSON data
 - Develop triage and threat analysis skills
 - Build AppSec/CTI hands-on experience for job applications
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+You are free to use, modify, and distribute this code for personal or commercial use. Just include proper attribution.
