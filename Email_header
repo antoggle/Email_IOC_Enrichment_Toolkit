@@ -1,0 +1,7 @@
+Return-Path: <phisher@badmail.com>
+Received: from suspicious-ip.net (198.51.100.25)
+    by yourmail.example.com with SMTP;
+Received: from fake-microsoft.com (192.0.2.123)
+Message-ID: <alert@fake-microsoft.com>
+From: "Microsoft Security Team" <security@fake-microsoft.com>
+Subject: Urgent: Update Your Password Immediately
